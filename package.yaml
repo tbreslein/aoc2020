@@ -1,10 +1,10 @@
 name:                aoc2020
 version:             0.1.0.0
-github:              "githubuser/aoc2020"
-license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2020 Author name here"
+github:              "tbreslein/aoc2020"
+license:             MIT
+author:              "Tommy Breslein"
+maintainer:          "tommy.breslein@protonmail.com"
+copyright:           "2020 Tommy Breslein"
 
 extra-source-files:
 - README.md
@@ -46,3 +46,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - aoc2020
+    - hspec
+    - QuickCheck

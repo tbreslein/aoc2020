@@ -4,17 +4,17 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 14af6d3de14779f29db3ef4f358bb659f4a722e90e0d7facaf5c3f3479cfd980
+-- hash: 4625c4fc7f61d880168fd1929dfe78d6b6da6a082f4f75f62f46c096e8472ee4
 
 name:           aoc2020
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/aoc2020#readme>
-homepage:       https://github.com/githubuser/aoc2020#readme
-bug-reports:    https://github.com/githubuser/aoc2020/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2020 Author name here
-license:        BSD3
+homepage:       https://github.com/tbreslein/aoc2020#readme
+bug-reports:    https://github.com/tbreslein/aoc2020/issues
+author:         Tommy Breslein
+maintainer:     tommy.breslein@protonmail.com
+copyright:      2020 Tommy Breslein
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
@@ -23,10 +23,11 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/aoc2020
+  location: https://github.com/tbreslein/aoc2020
 
 library
   exposed-modules:
+      Day1
       Lib
   other-modules:
       Paths_aoc2020
@@ -57,6 +58,8 @@ test-suite aoc2020-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      aoc2020
+      QuickCheck
+    , aoc2020
     , base >=4.7 && <5
+    , hspec
   default-language: Haskell2010
