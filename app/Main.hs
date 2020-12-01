@@ -1,8 +1,8 @@
 module Main where
 
 import Day1
+import Control.Monad ((<=<))
 import System.Environment (getArgs)
-import System.IO (hClose, hGetContents, openFile, IOMode (ReadMode))
 
 main :: IO ()
 main = do
@@ -12,9 +12,4 @@ main = do
       ["1", "2"] -> dispatch day1_2 "input/day1.txt"
       _ -> error "invalid args"
       where
-          dispatch func fileName = do
-              handle <- openFile fileName ReadMode
-              contents <- hGetContents handle
-              putStrLn $ func contents
-              hClose handle
-
+          dispatch func = putStrLn . func <=< readFile
