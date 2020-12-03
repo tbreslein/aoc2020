@@ -1,7 +1,24 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes #-}
+
 import Day1
 import Day2
+import Day3
 import Test.Hspec
--- import Test.QuickCheck
+import Text.RawString.QQ
+
+day3_testForest :: String
+day3_testForest = [r|..##.......
+#...#...#..
+.#....#..#.
+..#.#...#.#
+.#...##..#.
+..#.##.....
+.#.#.#....#
+.#........#
+#.##...#...
+#...##....#
+.#..#...#.#|]
 
 main :: IO ()
 main = hspec $ do
@@ -17,5 +34,8 @@ main = hspec $ do
             day2_1 "1-3 a: abcde\n1-3 b: cdefg\n2-9 c: ccccccccc" `shouldBe` show 2
         it "given `1-3 a: abcde\\n1-3 b: cdefg\\n2-9 c: ccccccccc`, Task 2 should return 1" $ do
             day2_2 "1-3 a: abcde\n1-3 b: cdefg\n2-9 c: ccccccccc" `shouldBe` show 1
-
-
+    describe "Day 3" $ do
+        it "given the test forest, Task 1 should return 7" $ do
+            day3_1 day3_testForest `shouldBe` show 7
+        it "given the test forest, Task 2 should return 336" $ do
+            day3_2 day3_testForest `shouldBe` show 336

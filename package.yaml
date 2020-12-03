@@ -50,3 +50,4 @@ tests:
     - aoc2020
     - hspec
     - QuickCheck
+    - raw-strings-qq

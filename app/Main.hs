@@ -2,6 +2,7 @@ module Main where
 
 import Day1
 import Day2
+import Day3
 import Control.Monad ((<=<))
 import System.Environment (getArgs)
 
@@ -13,6 +14,8 @@ main = do
       ["1", "2"] -> dispatch day1_2 (getOutStr args) "input/day1.txt"
       ["2", "1"] -> dispatch day2_1 (getOutStr args) "input/day2.txt"
       ["2", "2"] -> dispatch day2_2 (getOutStr args) "input/day2.txt"
+      ["3", "1"] -> dispatch day3_1 (getOutStr args) "input/day3.txt"
+      ["3", "2"] -> dispatch day3_2 (getOutStr args) "input/day3.txt"
       _ -> error "invalid args"
       where
           dispatch func outStr = putStrLn . (++) outStr . func <=< readFile
