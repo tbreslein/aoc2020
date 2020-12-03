@@ -5,6 +5,8 @@ module Day1
 
 import Control.Monad (replicateM)
 
+-- obviously not optimised: this has time complexity of O(n^2), and could be easily be brought down
+-- to O(n log(n)), but then this function would not be a one-liner anymore
 process :: Int -> [Int] -> Int
 process _ [] = 0
 process n xs = product . head $ [y | y <- replicateM n xs, sum y == 2020]
