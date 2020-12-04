@@ -4,11 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: db21c15793b5ce722f63597ede3c04025e02561e35dd9345e25bfb21271bc941
+-- hash: 988722f5b6fbcd027a11dbccc7761c2417701f5df9e450d8ed481c5dd24b9947
 
 name:           aoc2020
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/aoc2020#readme>
+description:    My solutions for Advent of Code 2020
 homepage:       https://github.com/tbreslein/aoc2020#readme
 bug-reports:    https://github.com/tbreslein/aoc2020/issues
 author:         Tommy Breslein
@@ -30,6 +30,7 @@ library
       Day1
       Day2
       Day3
+      Day4
   other-modules:
       Paths_aoc2020
   hs-source-dirs:
@@ -37,7 +38,9 @@ library
   build-depends:
       base >=4.7 && <5
     , cond
+    , raw-strings-qq
     , split
+    , text
   default-language: Haskell2010
 
 executable aoc2020-exe
@@ -51,7 +54,9 @@ executable aoc2020-exe
       aoc2020
     , base >=4.7 && <5
     , cond
+    , raw-strings-qq
     , split
+    , text
   default-language: Haskell2010
 
 test-suite aoc2020-test
@@ -70,4 +75,5 @@ test-suite aoc2020-test
     , hspec
     , raw-strings-qq
     , split
+    , text
   default-language: Haskell2010
