@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 988722f5b6fbcd027a11dbccc7761c2417701f5df9e450d8ed481c5dd24b9947
+-- hash: 82194d3c01d6028dffe519a2af5ca9070ec33751e4e9f233b350cc342c607305
 
 name:           aoc2020
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       Day2
       Day3
       Day4
+      Day5
   other-modules:
       Paths_aoc2020
   hs-source-dirs:
@@ -38,6 +39,7 @@ library
   build-depends:
       base >=4.7 && <5
     , cond
+    , containers
     , raw-strings-qq
     , split
     , text
@@ -54,6 +56,7 @@ executable aoc2020-exe
       aoc2020
     , base >=4.7 && <5
     , cond
+    , containers
     , raw-strings-qq
     , split
     , text
@@ -72,6 +75,7 @@ test-suite aoc2020-test
     , aoc2020
     , base >=4.7 && <5
     , cond
+    , containers
     , hspec
     , raw-strings-qq
     , split

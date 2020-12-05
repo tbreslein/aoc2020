@@ -5,6 +5,7 @@ import Day1
 import Day2
 import Day3
 import Day4
+import Day5
 import Test.Hspec
 import Text.RawString.QQ
 
@@ -91,3 +92,12 @@ main = hspec $ do
             day4_2 day4_validPassports `shouldBe` show 4
         it "given the invalid test passports, Task 2 should return 4" $ do
             day4_2 day4_invalidPassports `shouldBe` show 0
+    describe "Day 5" $ do
+        it "given `BFFFBBFRRR`, Task 1 should return 567" $ do
+            day5_1 "BFFFBBFRRR" `shouldBe` show 567
+        it "given `FFFBBBFRRR`, Task 1 should return 119" $ do
+            day5_1 "FFFBBBFRRR" `shouldBe` show 119
+        it "given `BBFFBBFRLL`, Task 1 should return 820" $ do
+            day5_1 "BBFFBBFRLL" `shouldBe` show 820
+        it "given the previous test cases, Task 1 should return 820" $ do
+            day5_1 "BFFFBBFRRR\nBBFFBBFRLL\nFFFBBBFRRR" `shouldBe` show 820

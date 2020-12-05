@@ -25,6 +25,7 @@ dependencies:
 - cond
 - text
 - raw-strings-qq
+- containers
 
 library:
   source-dirs: src
