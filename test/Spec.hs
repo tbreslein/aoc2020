@@ -6,6 +6,7 @@ import Day2
 import Day3
 import Day4
 import Day5
+import Day6
 import Test.Hspec
 import Text.RawString.QQ
 
@@ -66,6 +67,23 @@ eyr:2022
 
 iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719|]
 
+day6_test :: String
+day6_test = [r|abc
+
+a
+b
+c
+
+ab
+ac
+
+a
+a
+a
+a
+
+b|]
+
 main :: IO ()
 main = hspec $ do
     describe "Day 1" $ do
@@ -101,3 +119,8 @@ main = hspec $ do
             day5_1 "BBFFBBFRLL" `shouldBe` show 820
         it "given the previous test cases, Task 1 should return 820" $ do
             day5_1 "BFFFBBFRRR\nBBFFBBFRLL\nFFFBBBFRRR" `shouldBe` show 820
+    describe "Day 6" $ do
+        it "given the example set, Task 1 should return 11" $ do
+            day6_1 day6_test `shouldBe` show 11
+        it "given the example set, Task 2 should return 6" $ do
+            day6_2 day6_test `shouldBe` show 6

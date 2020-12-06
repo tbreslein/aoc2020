@@ -5,6 +5,7 @@ import Day2
 import Day3
 import Day4
 import Day5
+import Day6
 import Control.Monad ((<=<))
 import System.Environment (getArgs)
 
@@ -22,6 +23,8 @@ main = do
       ["4", "2"] -> dispatch day4_2 (getOutStr args) "input/day4.txt"
       ["5", "1"] -> dispatch day5_1 (getOutStr args) "input/day5.txt"
       ["5", "2"] -> dispatch day5_2 (getOutStr args) "input/day5.txt"
+      ["6", "1"] -> dispatch day6_1 (getOutStr args) "input/day6.txt"
+      ["6", "2"] -> dispatch day6_2 (getOutStr args) "input/day6.txt"
       _ -> error "invalid args"
       where
           dispatch func outStr = putStrLn . (++) outStr . func <=< readFile

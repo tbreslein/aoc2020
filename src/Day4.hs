@@ -1,5 +1,6 @@
 module Day4 (day4_1, day4_2) where
 
+import Helpers (between, flatParagraphs)
 import Data.List (isSuffixOf, (\\))
 import Data.List.Split (splitOn)
 
@@ -31,7 +32,7 @@ day4_2 = processInput f
 -- everything else
 processInput :: ([String] -> Int) -> String -> String
 processInput f =
-    show . sum . map (processPassport f . concatMap words . lines) . splitOn "\n\n"
+    show . sum . map (processPassport f) . flatParagraphs
 
 processPassport :: ([String] -> Int) -> [String] -> Int
 processPassport _ [] = 0
@@ -64,7 +65,6 @@ validateFields s = case splitOn ":" s of
     where
         isNumber = all (`elem` ['0'..'9'])
         isHexDigits = all (`elem` hexDigits)
-        between x a b = x >= a && x <= b
         checkHeight x
             | "cm" `isSuffixOf` x = length x == 5 && let xNum = read (take 3 x)
                                                       in between xNum 150 193
