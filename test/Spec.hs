@@ -7,6 +7,7 @@ import Day3
 import Day4
 import Day5
 import Day6
+import Day7
 import Test.Hspec
 import Text.RawString.QQ
 
@@ -84,6 +85,26 @@ a
 
 b|]
 
+day7_test1 :: String
+day7_test1 = [r|light red bags contain 1 bright white bag, 2 muted yellow bags.
+dark orange bags contain 3 bright white bags, 4 muted yellow bags.
+bright white bags contain 1 shiny gold bag.
+muted yellow bags contain 2 shiny gold bags, 9 faded blue bags.
+shiny gold bags contain 1 dark olive bag, 2 vibrant plum bags.
+dark olive bags contain 3 faded blue bags, 4 dotted black bags.
+vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
+faded blue bags contain no other bags.
+dotted black bags contain no other bags.|]
+
+day7_test2 :: String
+day7_test2 = [r|shiny gold bags contain 2 dark red bags.
+dark red bags contain 2 dark orange bags.
+dark orange bags contain 2 dark yellow bags.
+dark yellow bags contain 2 dark green bags.
+dark green bags contain 2 dark blue bags.
+dark blue bags contain 2 dark violet bags.
+dark violet bags contain no other bags.|]
+
 main :: IO ()
 main = hspec $ do
     describe "Day 1" $ do
@@ -124,3 +145,10 @@ main = hspec $ do
             day6_1 day6_test `shouldBe` show 11
         it "given the example set, Task 2 should return 6" $ do
             day6_2 day6_test `shouldBe` show 6
+    describe "Day 7" $ do
+        it "given the example set, Task 1 should return 4" $ do
+            day7_1 day7_test1 `shouldBe` show 4 
+        it "given the first example set, Task 2 should return 32" $ do
+            day7_2 day7_test1 `shouldBe` show 32
+        it "given the second example set, Task 2 should return 126" $ do
+            day7_2 day7_test2 `shouldBe` show 126
